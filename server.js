@@ -11,9 +11,6 @@ import rutasUsuario from './views/usuarios/rutas.js';
 import rutasProducto from './views/productos/rutas.js';
 
 
-import jwt from 'express-jwt';
-import jwks from 'jwks-rsa';
-import authorizacionEstadoUsuario from './middlewares/autorizacionEstadoUsuario.js';
 dotenv.config({ path: './.env' });
 const port = process.env.PORT || 5000;
 
@@ -21,21 +18,6 @@ const app = Express();
 
 app.use(Express.json());
 app.use(Cors());
-
-  var jwtCheck = jwt({
-    secret: jwks.expressJwtSecret({
-        cache: true,
-        rateLimit: true,
-        jwksRequestsPerMinute: 5,
-        jwksUri: 'https://firstsolution-proyventas.us.auth0.com/.well-known/jwks.json' // cambiar Auth
-  }),
-  audience: 'api-autenticacion-ventas-mintic',
-  issuer: 'https://firstsolution-proyventas.us.auth0.com/', // cambiar Auth
-  algorithms: ['RS256']
-  });
-
-app.use(jwtCheck);
-app.use(authorizacionEstadoUsuario);
 app.use(rutasVenta);
 app.use(rutasUsuario);
 app.use(rutasProducto);
