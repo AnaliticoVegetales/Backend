@@ -18,8 +18,8 @@ const conectarBD = (callback) => {
       console.error('Error conectando a la base de datos');
       return 'error';
     }
-    baseDeDatos = db.db('ventas');
-    console.log('Conexion a base de datos: Exito');
+    baseDeDatos = db.db('Analitico-Vegetales');
+    console.log('baseDeDatos exitosa');
     return callback();
   });
 };
