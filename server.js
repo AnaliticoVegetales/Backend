@@ -7,7 +7,7 @@ import jwks from 'jwks-rsa';
 
 import rutasProducto from './views/productos/rutas.js';
 import rutasUsuario from './views/usuarios/rutas.js';
-import rutasVenta from './views/ventas/rutas.js';
+import rutasPedido from './views/pedidos/rutas.js';
 
 
 
@@ -25,10 +25,10 @@ var jwtCheck = jwt({
       cache: true,
       rateLimit: true,
       jwksRequestsPerMinute: 5,
-      jwksUri: 'https://ezequiellr.us.auth0.com/.well-known/jwks.json'
+      jwksUri: 'https://analitico-vegetales.us.auth0.com/.well-known/jwks.json'
 }),
-audience: 'autenticacion-focus-tech',
-issuer: 'https://ezequiellr.us.auth0.com/',
+audience: 'autenticacion-analitico-vegetales',
+issuer: 'https://analitico-vegetales.us.auth0.com/',
 algorithms: ['RS256']
 });
 
@@ -37,7 +37,7 @@ app.use(jwtCheck);
 
 app.use(rutasProducto);
 app.use(rutasUsuario);
-app.use(rutasVenta);
+app.use(rutasPedido);
 
 const main = () => {
   return app.listen(port, () => {

@@ -18,7 +18,7 @@ const conectarBD = (callback) => {
       console.error('Error conectando a la base de datos');
       return 'error';
     }
-    baseDeDatos = db.db('focus-tech');
+    baseDeDatos = db.db('Analitico-Vegetales');
     console.log('baseDeDatos exitosa');
     return callback();
   });
