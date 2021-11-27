@@ -8,6 +8,7 @@ import jwks from 'jwks-rsa';
 import rutasProducto from './views/productos/rutas.js';
 import rutasUsuario from './views/usuarios/rutas.js';
 import rutasPedido from './views/pedidos/rutas.js';
+import rutasSede from './views/sedes/rutas.js';
 
 
 
@@ -38,6 +39,7 @@ app.use(jwtCheck);
 app.use(rutasProducto);
 app.use(rutasUsuario);
 app.use(rutasPedido);
+app.use(rutasSede);
 
 const main = () => {
   return app.listen(port, () => {

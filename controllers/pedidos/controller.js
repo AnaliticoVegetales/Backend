@@ -10,13 +10,15 @@ const queryAllSales = async (callback) => {
 const crearPedido = async (datosPedido, callback) => {
   if (
     Object.keys(datosPedido).includes('fecha') &&
-    Object.keys(datosPedido).includes('cliente') &&
     Object.keys(datosPedido).includes('producto') &&
+    Object.keys(datosPedido).includes('cliente') &&
     Object.keys(datosPedido).includes('cantidad') &&
+    Object.keys(datosPedido).includes('precio') &&
     Object.keys(datosPedido).includes('transportador') &&
     Object.keys(datosPedido).includes('sede') &&
-    Object.keys(datosPedido).includes('region') &&
-    Object.keys(datosPedido).includes('entrega')
+    // Object.keys(datosPedido).includes('region') &&
+    Object.keys(datosPedido).includes('estado')&&
+    Object.keys(datosPedido).includes('total')
   ) {
     const baseDeDatos = getDB();
     // Código para crear Productos en la BD
