@@ -9,6 +9,7 @@ import rutasProducto from './views/productos/rutas.js';
 import rutasUsuario from './views/usuarios/rutas.js';
 import rutasPedido from './views/pedidos/rutas.js';
 import rutasSede from './views/sedes/rutas.js';
+import rutasMensaje from './views/mensajes/rutas.js';
 
 
 
